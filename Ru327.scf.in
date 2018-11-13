@@ -1,27 +1,29 @@
  &control
     prefix='Ru327',
-    pseudo_dir='.'
+    calculation='scf',
+    restart_mode='from_scratch',
+    pseudo_dir='.',
     outdir = './out',
  /
  &system    
-    ibrav = 0, celldm(1) = 10.3946275, celldm(2) = 10.3946275, celldm(3) = 39.1645739, nat=  2, ntyp= 1,
-    ecutwfc = 12.0, 
+    	    ibrav	=	1,
+	    celldm(1) 	= 	10.4,
+	    celldm(3) 	= 	4,
+	    nat		= 	2,
+	    input_dft	=	'PBC',
+	    ntyp	= 	3,
+	    ecutwfc 	= 	20.0, 
  /
  &electrons
+	conv_thr	=	1.D-8,
+	mixing_beta	=	0.5D0,
  /
 ATOMIC_SPECIES
-Ru 101.07 Ru.pbe-spn-kjpaw_psl.1.0.0.UPF
-Sr 87.62 Sr.pbesol-spn-kjpaw_psl.1.0.0.UPF
-O 15.999 O.pz-n-kjpaw_psl.0.1.UPF
-ATOMIC_POSITIONS crystal
+Ru   102.00000   Ru.pbe-spn-kjpaw_psl.1.0.0.UPF
+Sr    88.00000	 Sr.pbesol-spn-kjpaw_psl.1.0.0.UPF
+O     16.00000   O.pz-n-kjpaw_psl.0.1.UPF
+ATOMIC_POSITIONS bohr
  O 0.00 0.00 0.00
- O 1.00 0.00 0.00
- O 0.00 1.00 0.00
- O 1.00 1.00 0.00
-CELL_PARAMETERS angstrom
-10.3946275 0.0 0.0
-0.0 10.3946275 0.0
-0.0 0.0 39.1645739
-/
-K_POINTS
-6 6 6 1 1 1
+ O 10.3946275 0.00 0.00
+K_POINTS (automatic)
+8 8 8 0 0 0
