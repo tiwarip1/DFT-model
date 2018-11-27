@@ -1,0 +1,6 @@
+ &bands
+    prefix  = 'Ru327'
+    outdir='./out'
+    filband = 'bands.dat'
+ /
+
