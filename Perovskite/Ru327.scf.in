@@ -1,0 +1,45 @@
+ &control
+    prefix='Ru327',
+    calculation='scf',
+    restart_mode='from_scratch',
+    pseudo_dir='.',
+    outdir = './out',
+ /
+ &system    
+    	    ibrav	=	1,
+	    A		=	5.5006,
+	    nat		= 	5,
+	    input_dft	=	'PBE',
+	    ntyp	= 	3,
+	    ecutwfc 	= 	30.0,
+	    ecutrho	=	300,
+ /
+ &electrons
+	conv_thr	=	1.D-5,
+	mixing_mode	=	'local-TF',
+	mixing_beta	=	0.5D0,
+	diagonalization =	'cg',
+	startingpot     =	"atomic",
+	startingwfc     = 	"atomic+random",
+ /
+ &IONS
+	ion_dynamics	=	'bfgs'
+ /
+ &CELL
+ /
+CELL_PARAMETERS
+ 5.5006 0.0 0.0
+ 0.0 5.5006 0.0
+ 0.0 0.0 5.5006
+ATOMIC_SPECIES
+Ru   102.00000   Ru.pbe-spn-rrkjus_psl.1.0.0.UPF
+Sr    88.00000	 Sr.pbe-spn-kjpaw_psl.1.0.0.UPF
+O     16.00000   O.pbe-n-kjpaw_psl.1.0.0.UPF
+ATOMIC_POSITIONS {angstrom}
+ Ru 0.0 0.0 0.0
+ O 0.0 2.7503 0.0
+ O 2.7503 0.0 0.0
+ O 0.0 0.0 2.7503
+ Sr 2.7503 2.7503 2.7503
+K_POINTS automatic
+6 6 6 0 0 0

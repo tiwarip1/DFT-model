@@ -1,0 +1,66 @@
+ &control
+    prefix='Ru327',
+    calculation='scf',
+    restart_mode='from_scratch',
+    pseudo_dir='.',
+    outdir = './out',
+ /
+ &system    
+    	    ibrav	=	0,
+	    A		=	1,
+	    B		=	5.5006,
+	    C		=	20.725,
+	    nat		= 	24,
+	    input_dft	=	'PBE',
+	    ntyp	= 	3,
+	    ecutwfc 	= 	50.0,
+	    ecutrho	=	400,
+ /
+ &electrons
+	conv_thr	=	1.D-8,
+	mixing_mode	=	'local-TF',
+	mixing_beta	=	0.5D0,
+	diagonalization =	'cg',
+	startingpot     =	"atomic",
+	startingwfc     = 	"atomic+random",
+ /
+ &IONS
+	ion_dynamics	=	'bfgs'
+ /
+ &CELL
+ /
+CELL_PARAMETERS
+ 5.5006 0.0 0.0
+ 0.0 5.5006 0.0
+ 0.0 0.0 20.725
+ATOMIC_SPECIES
+Ru   102.00000   Ru.pbe-spn-rrkjus_psl.1.0.0.UPF
+Sr    88.00000	 Sr.pbe-spn-kjpaw_psl.1.0.0.UPF
+O     16.00000   O.pbe-n-kjpaw_psl.1.0.0.UPF
+ATOMIC_POSITIONS {angstrom}
+ O 0.0 0.0 0.0
+ O 0.0 0.0 4.024
+ O 0.0 2.7503 2.012
+ O 2.7503 0.0 2.012
+ O 2.7503 2.7503 6.3385
+ O 0.0 2.7503 8.3505
+ O 2.7503 0.0 8.3505
+ O 2.7503 2.7503 10.3625
+ O 0.0 2.7503 12.3745
+ O 2.7503 0.0 12.3745
+ O 2.7503 2.7503 14.3865
+ O 0.0 0.0 16.3985
+ O 2.7503 0.0 18.4105
+ O 0.0 2.7503 18.4105
+ Ru 0.0 0.0 2.012
+ Ru 2.7503 2.7503 8.3505
+ Ru 2.7503 2.7503 12.3745
+ Ru 0.0 0.0 18.4105
+ Sr 2.7503 2.7503 0.0
+ Sr 2.7503 2.7503 4.024
+ Sr 0.0 0.0 6.3385
+ Sr 0.0 0.0 10.3625
+ Sr 0.0 0.0 14.3865
+ Sr 2.7503 2.7503 16.3985
+K_POINTS automatic
+12 12 12 0 0 0
